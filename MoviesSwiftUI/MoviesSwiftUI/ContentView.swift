@@ -11,10 +11,30 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var helper = HttpHelper()
+    //Inject IoC in ViewModel
+    @Inject var httpHelper: HttpHelperProtocol
+    init() {
+        Carregar(httpHelper)
+    }
+    
     var body: some View {
+        
         Text("Hello, world!")
             .padding()
+    }
+}
+
+func Carregar(_ protocols:HttpHelperProtocol) {
+    
+    protocols.Get("movie/popular", params: nil){
+        (result:Result<Movie,HttpError>) in
+        switch result {
+        
+        case let.success(response):
+            break
+        case .failure(_):
+            break
+        }
     }
 }
 

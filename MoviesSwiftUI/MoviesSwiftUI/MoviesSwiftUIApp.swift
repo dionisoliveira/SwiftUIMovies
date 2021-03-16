@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct MoviesSwiftUIApp: App {
+    let ioc: () =  RegisterIoC().RegisterItens()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31AB863E25FBE4EB0075DFF8 /* RegisterIoC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB863D25FBE4EB0075DFF8 /* RegisterIoC.swift */; };
+		31AB864625FBE5A70075DFF8 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB864525FBE5A70075DFF8 /* DependencyInjector.swift */; };
+		31AB864C25FBEDF40075DFF8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB864B25FBEDF40075DFF8 /* Movie.swift */; };
 		75A5A2A025F995E900573B67 /* MoviesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A29F25F995E900573B67 /* MoviesSwiftUIApp.swift */; };
 		75A5A2A225F995E900573B67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A2A125F995E900573B67 /* ContentView.swift */; };
 		75A5A2A425F995EE00573B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75A5A2A325F995EE00573B67 /* Assets.xcassets */; };
@@ -14,7 +17,6 @@
 		75A5A2B225F995EE00573B67 /* MoviesSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A2B125F995EE00573B67 /* MoviesSwiftUITests.swift */; };
 		75A5A2BD25F995EE00573B67 /* MoviesSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A2BC25F995EE00573B67 /* MoviesSwiftUIUITests.swift */; };
 		75A5A2F925F9A10400573B67 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A2F825F9A10400573B67 /* HttpHelper.swift */; };
-		75A5A30125F9A13100573B67 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A30025F9A13100573B67 /* DependencyInjector.swift */; };
 		75A5A30925F9A16900573B67 /* HttpHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5A30825F9A16900573B67 /* HttpHelperProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31AB863D25FBE4EB0075DFF8 /* RegisterIoC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIoC.swift; sourceTree = "<group>"; };
+		31AB864525FBE5A70075DFF8 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		31AB864B25FBEDF40075DFF8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		75A5A29C25F995E900573B67 /* MoviesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A5A29F25F995E900573B67 /* MoviesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSwiftUIApp.swift; sourceTree = "<group>"; };
 		75A5A2A125F995E900573B67 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +54,6 @@
 		75A5A2BC25F995EE00573B67 /* MoviesSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSwiftUIUITests.swift; sourceTree = "<group>"; };
 		75A5A2BE25F995EE00573B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75A5A2F825F9A10400573B67 /* HttpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
-		75A5A30025F9A13100573B67 /* DependencyInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyInjector.swift; path = ../../Documents/Cryptocurrency_Swift/Cryptocurrency/Cryptocurrency/DependencyInjector.swift; sourceTree = "<group>"; };
 		75A5A30825F9A16900573B67 /* HttpHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHelperProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31AB863C25FBE4CF0075DFF8 /* IoC */ = {
+			isa = PBXGroup;
+			children = (
+				31AB863D25FBE4EB0075DFF8 /* RegisterIoC.swift */,
+			);
+			path = IoC;
+			sourceTree = "<group>";
+		};
+		31AB864A25FBEDE20075DFF8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				31AB865125FBF2010075DFF8 /* Model */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		31AB865125FBF2010075DFF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31AB864B25FBEDF40075DFF8 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		75A5A29325F995E900573B67 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +131,8 @@
 		75A5A29E25F995E900573B67 /* MoviesSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				31AB864A25FBEDE20075DFF8 /* Domain */,
+				31AB863C25FBE4CF0075DFF8 /* IoC */,
 				75A5A29F25F995E900573B67 /* MoviesSwiftUIApp.swift */,
 				75A5A2A125F995E900573B67 /* ContentView.swift */,
 				75A5A2A325F995EE00573B67 /* Assets.xcassets */,
@@ -156,9 +186,9 @@
 		75A5A2E125F9A07200573B67 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				75A5A30025F9A13100573B67 /* DependencyInjector.swift */,
 				75A5A2F825F9A10400573B67 /* HttpHelper.swift */,
 				75A5A30825F9A16900573B67 /* HttpHelperProtocol.swift */,
+				31AB864525FBE5A70075DFF8 /* DependencyInjector.swift */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -294,10 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AB864C25FBEDF40075DFF8 /* Movie.swift in Sources */,
 				75A5A30925F9A16900573B67 /* HttpHelperProtocol.swift in Sources */,
 				75A5A2A225F995E900573B67 /* ContentView.swift in Sources */,
-				75A5A30125F9A13100573B67 /* DependencyInjector.swift in Sources */,
 				75A5A2A025F995E900573B67 /* MoviesSwiftUIApp.swift in Sources */,
+				31AB863E25FBE4EB0075DFF8 /* RegisterIoC.swift in Sources */,
+				31AB864625FBE5A70075DFF8 /* DependencyInjector.swift in Sources */,
 				75A5A2F925F9A10400573B67 /* HttpHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

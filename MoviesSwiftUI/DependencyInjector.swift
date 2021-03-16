@@ -1,7 +1,7 @@
 struct DependencyInjector {
     private static var dependencyList: [String:Any] = [:]
     
-    static func resolve<T>() -> T {
+    static func Resolve<T>() -> T {
         guard let t = dependencyList[String(describing: T.self)] as? T else {
             fatalError("No povider registered for type \(T.self)")
         }
@@ -17,7 +17,7 @@ struct DependencyInjector {
     var wrappedValue: T
     
     init() {
-        self.wrappedValue = DependencyInjector.resolve()
+        self.wrappedValue = DependencyInjector.Resolve()
     }
 }
 
