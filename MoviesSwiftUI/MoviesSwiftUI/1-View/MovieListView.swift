@@ -14,6 +14,7 @@ struct MovieListView: View {
 
     var body: some View {
         VStack{
+         
             List(viewModel.Movies) {
                 currencyrow in  MovieRowCell(movie: currencyrow)
             }.alert(isPresented: $viewModel.isPresented) {

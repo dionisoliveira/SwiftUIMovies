@@ -10,6 +10,7 @@ import Foundation
 class  MovieListViewModel: ViewModelBase  {
     
     @Inject var httpHelper: HttpHelperProtocol
+    @Inject var imageService: ImageServiceProtocol
     @Published var Movies: [Movie] = []
     
     override init() {
@@ -21,6 +22,7 @@ class  MovieListViewModel: ViewModelBase  {
             () in
             self.objectWillChange.send()
         }
+     
     }
     
    
@@ -35,7 +37,7 @@ class  MovieListViewModel: ViewModelBase  {
             case let.success(response):
                 DispatchQueue.main.async {
                 let movies = (response.results as [Movie])
-                    self.Movies = movies;
+                        self.Movies = movies;
                 }
                
                 break
@@ -50,39 +52,14 @@ class  MovieListViewModel: ViewModelBase  {
           
         }
     }
-   
-    func MockData(){
-      
-      var movie:[Movie] = []
-      self.Movies = []
-      let movie1 =  Movie(id: 0,
-                                original_title: "Test movie Test movie Test movie Test movie Test movie Test movie Test movie ",
-                                title: "Test movie Test movie Test movie Test movie Test movie Test movie Test movie  Test movie Test movie Test movie",
-                                overview: "Test desc",
-                                poster_path: "/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg",
-                                backdrop_path: "/nl79FQ8xWZkhL3rDr1v2RFFR6J0.jpg",
-                                popularity: 50.5,
-                                vote_average: 8.9,
-                                vote_count: 1000,
-                                release_date: "1972-03-14",
-                               // genres: [Genre(id: 0, name: "test")],
-                                runtime: 80,
-                                status: "released"  ,
-                                video: false)
-        
-      
-        movie.append(movie1)
-      
-            self.Movies = movie
-     
-    }
+
     
     let mockMoview = Movie(id: 0,
                           original_title: "This is Title  ",
                           title: "This is ",
                           overview: "Test desc",
-                          poster_path: "/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg",
-                          backdrop_path: "/nl79FQ8xWZkhL3rDr1v2RFFR6J0.jpg",
+                          poster_path: "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
+                          backdrop_path: "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
                           popularity: 50.5,
                           vote_average: 8.9,
                           vote_count: 1000,

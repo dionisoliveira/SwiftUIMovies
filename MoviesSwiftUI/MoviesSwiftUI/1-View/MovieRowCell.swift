@@ -12,10 +12,21 @@ struct MovieRowCell: View {
     var movie: Movie
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text(movie.title)
-            Text(movie.original_title)
-        }.background(Color.blue)
+        HStack(alignment: .center){
+            VStack {
+                ImageUI(movie.poster_path!)
+                    .frame(width: 80, height: 100, alignment: .center)
+                
+                    .background(Color(.blue))
+                    
+                    
+            }
+            VStack {
+                Text(movie.title).font(.title)
+                Text(movie.original_title).font(.subheadline)
+            }
+            
+        }.foregroundColor(.green)
      
     }
 }
@@ -27,8 +38,9 @@ struct MovieRowCell: View {
 struct CurrencyRow_Previews: PreviewProvider {
    
     static var previews: some View {
-     
-        MovieRowCell(movie:MovieListViewModel().mockMoview ).frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        let viewModel = MovieListViewModel()
+        
+        MovieRowCell(movie:viewModel.mockMoview)
     }
 }
 #endif

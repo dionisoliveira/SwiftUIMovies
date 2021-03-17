@@ -49,10 +49,10 @@ struct Movie: Codable, Identifiable {
    //     let keywords: [Keyword]?
    // }
     
-   // struct MovieImages: Codable {
-   //     let posters: [ImageData]?
-   //     let backdrops: [ImageData]?
-   // }
+    struct MovieImages: Codable {
+        let posters: [ImageData]?
+        let backdrops: [ImageData]?
+    }
     
     struct productionCountry: Codable, Identifiable {
         var id: String {
