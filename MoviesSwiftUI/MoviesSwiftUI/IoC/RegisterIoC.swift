@@ -17,6 +17,7 @@ struct RegisterIoC{
      func RegisterItens(){
         //Set class for register in IOC
         DependencyInjector.register(dependency: HttpHelper() as HttpHelperProtocol)
+       // DependencyInjector.register(dependency: AlertManager() as AlertManagerProtocol)
        // DependencyInjector.register(dependency: CurrencyViewModel() as CurrencyViewModelProtocol)
         //DependencyInjector.register(dependency: LoginAdm() as LoginAdmProtocol)
       

@@ -7,14 +7,12 @@
 
 import Foundation
 
-class Movie :Codable, Identifiable{
+struct Movie: Codable, Identifiable {
     let id: Int
     
     let original_title: String
     let title: String
-    var userTitle: String {
-        return AppUserDefaults.alwaysOriginalTitle ? original_title : title
-    }
+  
     
     let overview: String
     let poster_path: String?
@@ -34,27 +32,27 @@ class Movie :Codable, Identifiable{
         return formatter
     }()
     
-    let genres: [Genre]?
+   // let genres: [Genre]?
     let runtime: Int?
     let status: String?
     let video: Bool
     
-    var keywords: Keywords?
-    var images: MovieImages?
+   // var keywords: Keywords?
+  //  var images: MovieImages?
     
     var production_countries: [productionCountry]?
     
     var character: String?
     var department: String?
     
-    struct Keywords: Codable {
-        let keywords: [Keyword]?
-    }
+   // struct Keywords: Codable {
+   //     let keywords: [Keyword]?
+   // }
     
-    struct MovieImages: Codable {
-        let posters: [ImageData]?
-        let backdrops: [ImageData]?
-    }
+   // struct MovieImages: Codable {
+   //     let posters: [ImageData]?
+   //     let backdrops: [ImageData]?
+   // }
     
     struct productionCountry: Codable, Identifiable {
         var id: String {

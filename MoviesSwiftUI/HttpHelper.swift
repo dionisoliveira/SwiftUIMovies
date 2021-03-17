@@ -55,6 +55,7 @@ public struct HttpHelper : HttpHelperProtocol {
                 return
             }
             do {
+             
                 let object = try self.decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
                     completionHandler(.success(object))
