@@ -31,7 +31,7 @@ struct MovieListView: View {
            
            
             .onAppear {
-                viewModel.loadMoviesList()
+                viewModel.fetchMovieList()
             }.alert(isPresented: $viewModel.isPresented) {
                 viewModel.dequeue()
                 

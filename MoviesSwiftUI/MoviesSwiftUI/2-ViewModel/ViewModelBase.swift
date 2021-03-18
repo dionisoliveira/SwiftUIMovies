@@ -14,7 +14,9 @@ import SwiftUI
 class ViewModelBase: ObservableObject {
 
     @Published var isPresented = false
+    
     @Inject var navigation: NavigationControllerProtocol
+    
     private var queues: [Alert] = []
 
     init() {
@@ -48,7 +50,7 @@ class ViewModelBase: ObservableObject {
         let alert = Alert(title: Text(title), message: Text(message), dismissButton: .default(Text(confirmation)))
        
         queues.append(alert)
-        
+       
         isPresented = true
     }
 

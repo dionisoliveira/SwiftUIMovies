@@ -8,7 +8,7 @@
 import Foundation
 
 class  MovieListViewModel: ViewModelBase  {
-    
+    var count: Int = 0
     @Inject var httpHelper: HttpHelperProtocol
     @Inject var imageService: ImageServiceProtocol
     @Published var Movies: [Movie] = []
@@ -18,24 +18,19 @@ class  MovieListViewModel: ViewModelBase  {
         
         //This code resolved a bug fix when using propagation Observable to propertie published [movie]
         //Remove this code, databinding stop to notification data in view.
-        objectWillChange.sink{
-            () in
-            self.objectWillChange.send()
-        }
+        self.objectWillChange.send()
+  
      
     }
     
     
     override func navigationToAny( model:BaseModelProtocol) -> Any {
-       
-        return  navigation.NavigationToAny(view: ViewEnum.Default, model: model)
-        
+         
+            return  navigation.NavigationToAny(view: ViewEnum.MovieDetail, model: model)
     }
-   // override func navigationTo( model:BaseModelProtocol) -> NavigationControllerProtocol {
-    //   return  navigation.NavigationTo(view: ViewEnum.MovieDetail, model: model)
-   // }
+   
     
-    func loadMoviesList() {
+    func fetchMovieList() {
         
         httpHelper.Get("movie/popular", params: nil){
             (result:Result<ResultAPI<Movie>,HttpError>) in

@@ -166,10 +166,9 @@
 		31AB865125FBF2010075DFF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				754250DA2603295800415181 /* Base */,
 				31AB864B25FBEDF40075DFF8 /* Movie.swift */,
 				31018B79260273C300004E27 /* ImageData.swift */,
-				754250B62602FED000415181 /* BaseModel.swift */,
-				754250BB2602FEDF00415181 /* BaseModelProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +198,15 @@
 				754250A02602EEB500415181 /* ColorExtension.swift */,
 			);
 			name = Color;
+			sourceTree = "<group>";
+		};
+		754250DA2603295800415181 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				754250BB2602FEDF00415181 /* BaseModelProtocol.swift */,
+				754250B62602FED000415181 /* BaseModel.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		756C56772601934000253CB7 /* Model */ = {
