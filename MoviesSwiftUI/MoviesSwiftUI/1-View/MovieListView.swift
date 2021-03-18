@@ -11,21 +11,54 @@ struct MovieListView: View {
     
     //Inject IoC in ViewModel
     @ObservedObject  var viewModel = MovieListViewModel()
+   
 
     var body: some View {
-        VStack{
-         
-            List(viewModel.Movies) {
-                currencyrow in  MovieRowCell(movie: currencyrow)
+        NavigationView {
+            VStack(alignment: .leading){
+               
+                List(viewModel.Movies,id:  \.self.id) {
+                   
+                    movieRow in
+                    NavigationLink(destination:LazyView(viewModel.navigationToAny(model: movieRow) as! AnyView)) {
+                                MovieRowCell(movie: movieRow)
+                                   }
+                   
+                }.navigationTitle("Favoritos").foregroundColor(.red)
+                
+            }
+           
+           
+           
+            .onAppear {
+                viewModel.loadMoviesList()
             }.alert(isPresented: $viewModel.isPresented) {
                 viewModel.dequeue()
+                
             }
-        }.onAppear {
-            viewModel.LoadMoviesList()
+            
         }
        
     }
+   
+   
+    
+    
+   
 }
+
+
+public struct LazyView<Content: View>: View {
+    private let build: () -> Content
+    public init(_ build: @autoclosure @escaping () -> Content) {
+        self.build = build
+    }
+    public var body: Content {
+        build()
+    }
+}
+
+
 
 
 

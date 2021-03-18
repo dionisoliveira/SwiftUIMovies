@@ -25,10 +25,17 @@ class  MovieListViewModel: ViewModelBase  {
      
     }
     
-   
     
+    override func navigationToAny( model:BaseModelProtocol) -> Any {
+       
+        return  navigation.NavigationToAny(view: ViewEnum.Default, model: model)
+        
+    }
+   // override func navigationTo( model:BaseModelProtocol) -> NavigationControllerProtocol {
+    //   return  navigation.NavigationTo(view: ViewEnum.MovieDetail, model: model)
+   // }
     
-    func LoadMoviesList() {
+    func loadMoviesList() {
         
         httpHelper.Get("movie/popular", params: nil){
             (result:Result<ResultAPI<Movie>,HttpError>) in
@@ -55,7 +62,7 @@ class  MovieListViewModel: ViewModelBase  {
 
     
     let mockMoview = Movie(id: 0,
-                          original_title: "This is Title  ",
+                          original_title: "Wonder Womand 1075  ",
                           title: "This is ",
                           overview: "Test desc",
                           poster_path: "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",

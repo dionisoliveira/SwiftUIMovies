@@ -14,7 +14,7 @@ import SwiftUI
 class ViewModelBase: ObservableObject {
 
     @Published var isPresented = false
-
+    @Inject var navigation: NavigationControllerProtocol
     private var queues: [Alert] = []
 
     init() {
@@ -34,7 +34,16 @@ class ViewModelBase: ObservableObject {
        
         
     }
-
+    func navigationToAny( model:BaseModelProtocol) -> Any {
+        return navigation
+        
+    }
+    func navigationTo( model:BaseModelProtocol) -> NavigationControllerProtocol {
+        return navigation
+        
+    }
+     
+            
     func enqueue(_ message:String,_ title:String = "Alert",_ confirmation:String = "Ok") {
         let alert = Alert(title: Text(title), message: Text(message), dismissButton: .default(Text(confirmation)))
        

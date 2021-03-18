@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Movie: Codable, Identifiable {
+struct  Movie:BaseModelProtocol,Codable, Identifiable {
+   
+    
     let id: Int
     
     let original_title: String
@@ -40,7 +42,7 @@ struct Movie: Codable, Identifiable {
    // var keywords: Keywords?
   //  var images: MovieImages?
     
-    var production_countries: [productionCountry]?
+//    var production_countries: [productionCountry]?
     
     var character: String?
     var department: String?

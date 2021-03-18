@@ -16,17 +16,15 @@ struct MovieRowCell: View {
             VStack {
                 ImageUI(movie.poster_path!)
                     .frame(width: 80, height: 100, alignment: .center)
-                
-                    .background(Color(.blue))
-                    
-                    
             }
-            VStack {
-                Text(movie.title).font(.title)
-                Text(movie.original_title).font(.subheadline)
+            VStack(alignment: .center) {
+                Text(movie.title).font(.body)
+              
             }
-            
-        }.foregroundColor(.green)
+           Spacer()
+        }.foregroundColor(.white)
+         .background(Color(.black))
+       
      
     }
 }
@@ -40,7 +38,7 @@ struct CurrencyRow_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = MovieListViewModel()
         
-        MovieRowCell(movie:viewModel.mockMoview)
+        MovieRowCell(movie:viewModel.mockMoview) .previewLayout(.fixed(width: 300, height: 130))
     }
 }
 #endif

@@ -12,11 +12,15 @@ import UIKit
 
 class ImageViewModel: ObservableObject {
     
+    private var isfetch:Bool = false
     @Published var image: UIImage = UIImage()
     @Inject var imageService: ImageServiceProtocol
     
     func GetImage(_ imagepath: String) {
-     
+        if isfetch == true {
+            return
+        }
+        
         let patch =  "https://image.tmdb.org/t/p/w154/"+imagepath
         imageService.fechImage(patch) {
             
@@ -25,6 +29,7 @@ class ImageViewModel: ObservableObject {
             case let .success(result):
                 DispatchQueue.main.async {
                     self.image = UIImage(data: result)!
+                    self.isfetch = true;
                 }
              
             case let .failure(result):
@@ -47,6 +52,7 @@ struct  ImageUI: View {
     
     init(_ image:String) {
         imagepath = image
+        imageModel.GetImage(imagepath)
     }
     
     var body: some View {
@@ -56,9 +62,9 @@ struct  ImageUI: View {
             Image(uiImage: imageModel.image)
                 .resizable()
                 
-        }.onAppear{
-            imageModel.GetImage(imagepath)
         }
+         
+        
     
     }
     

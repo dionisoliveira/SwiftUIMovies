@@ -18,6 +18,7 @@ struct RegisterIoC{
         //Set class for register in IOC
         DependencyInjector.register(dependency: HttpHelper() as HttpHelperProtocol)
         DependencyInjector.register(dependency: ImageService() as ImageServiceProtocol)
+        DependencyInjector.register(dependency: NavigationController() as NavigationControllerProtocol)
        // DependencyInjector.register(dependency: AlertManager() as AlertManagerProtocol)
        // DependencyInjector.register(dependency: CurrencyViewModel() as CurrencyViewModelProtocol)
         //DependencyInjector.register(dependency: LoginAdm() as LoginAdmProtocol)
