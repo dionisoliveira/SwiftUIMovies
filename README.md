@@ -1,5 +1,5 @@
 # SwiftUIMovies
-Movies project with swiftUI/MVVM/IoC
+Movies project
 
 This project is a sample how using the some desing partner's in SwiftUI.
 
