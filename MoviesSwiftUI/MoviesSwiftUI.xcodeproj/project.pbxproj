@@ -178,13 +178,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		31C69306260A32370035A1B5 /* 3-Domain */ = {
+		31C6932B260A45A80035A1B5 /* 5-Packages */ = {
+			isa = PBXGroup;
+			children = (
+				75A5A2E125F9A07200573B67 /* Infrastructure */,
+			);
+			path = "5-Packages";
+			sourceTree = "<group>";
+		};
+		31C6932C260A45CE0035A1B5 /* 3-Domain */ = {
 			isa = PBXGroup;
 			children = (
 				75735A372601A0A0005850ED /* Protocol */,
 				31AB865125FBF2010075DFF8 /* Model */,
 			);
-			name = "3-Domain";
+			path = "3-Domain";
 			sourceTree = "<group>";
 		};
 		7542509E2602EE9F00415181 /* Shared */ = {
@@ -243,6 +251,7 @@
 				75735A382601A0B4005850ED /* AlertMenagerAlertManagerProtocolProtocol.swift */,
 			);
 			name = Protocol;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		75735A4B2601A7BC005850ED /* 2-ViewModel */ = {
@@ -279,8 +288,9 @@
 			children = (
 				756C568626019CF000253CB7 /* 1-View */,
 				75735A4B2601A7BC005850ED /* 2-ViewModel */,
-				31C69306260A32370035A1B5 /* 3-Domain */,
+				31C6932C260A45CE0035A1B5 /* 3-Domain */,
 				31018B88260276C600004E27 /* 4-Services */,
+				31C6932B260A45A80035A1B5 /* 5-Packages */,
 				31AB863C25FBE4CF0075DFF8 /* IoC */,
 				75A5A2A325F995EE00573B67 /* Assets.xcassets */,
 				75A5A2A825F995EE00573B67 /* Info.plist */,
@@ -318,7 +328,6 @@
 		75A5A2D425F9975A00573B67 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				75A5A2E125F9A07200573B67 /* Infrastructure */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 				75A5A2F825F9A10400573B67 /* HttpHelper.swift */,
 			);
 			name = Infrastructure;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		75B73BE526023C6100357406 /* Cell */ = {
