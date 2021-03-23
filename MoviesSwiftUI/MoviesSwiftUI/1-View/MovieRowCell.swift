@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieRowCell: View {
     
-    var movie: Movie
+    var movie: MovieModel
     
     var body: some View {
         HStack(alignment: .center){

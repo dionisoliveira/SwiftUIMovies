@@ -21,7 +21,7 @@ class ViewModelBase: ObservableObject {
 
     init() {
   
-       let cancellable = $isPresented
+       _ = $isPresented
             .filter({ [weak self] isPresented in
                 guard let self = self else {
                     return false
@@ -36,14 +36,12 @@ class ViewModelBase: ObservableObject {
        
         
     }
-    func navigationToAny( model:BaseModelProtocol) -> Any {
+    
+    func navigationTo( model:BaseModelProtocol) -> Any {
         return navigation
         
     }
-    func navigationTo( model:BaseModelProtocol) -> NavigationControllerProtocol {
-        return navigation
-        
-    }
+ 
      
             
     func enqueue(_ message:String,_ title:String = "Alert",_ confirmation:String = "Ok") {

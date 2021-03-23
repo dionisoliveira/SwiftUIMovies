@@ -20,16 +20,11 @@ struct MovieListView: View {
                 List(viewModel.Movies,id:  \.self.id) {
                    
                     movieRow in
-                    NavigationLink(destination:LazyView(viewModel.navigationToAny(model: movieRow) as! AnyView)) {
+                    NavigationLink(destination:LazyView(viewModel.navigationTo(model: movieRow) as! AnyView)) {
                                 MovieRowCell(movie: movieRow)
                                    }
-                   
                 }.navigationTitle("Favoritos").foregroundColor(.red)
-                
             }
-           
-           
-           
             .onAppear {
                 viewModel.fetchMovieList()
             }.alert(isPresented: $viewModel.isPresented) {

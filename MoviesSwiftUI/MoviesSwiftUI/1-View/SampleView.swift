@@ -10,7 +10,7 @@ import SwiftUI
 struct SampleView: View {
     var body: some View {
         VStack(alignment: .leading ) {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("You not define page to navigation in viewcontroller")
             Spacer()
         }
     }

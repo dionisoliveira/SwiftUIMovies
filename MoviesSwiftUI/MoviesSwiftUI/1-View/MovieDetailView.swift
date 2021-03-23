@@ -9,14 +9,24 @@ import Foundation
 import SwiftUI
 struct MovieDetailView: View {
     
-    var model: Movie
+    var model: MovieModel
     
    
     var body: some View {
-        Text(model.title)
-        Text(model.overview)
-        Divider()
-      
+        ScrollView{
+            VStack(){
+                ImageUI(model.poster_path!)
+                    .frame(width: 150, height: 250, alignment: .center)
+                VStack(alignment: .center){
+                    Text(model.title).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(.white)
+                    Text(model.overview).font(.body).foregroundColor(.white)
+                    Spacer()
+                    
+                }.padding()                
+            }
+            
+        }.background(Color(.black))
+        
     }
 }
 

@@ -11,7 +11,7 @@ class  MovieListViewModel: ViewModelBase  {
     var count: Int = 0
     @Inject var httpHelper: HttpHelperProtocol
     @Inject var imageService: ImageServiceProtocol
-    @Published var Movies: [Movie] = []
+    @Published var Movies: [MovieModel] = []
     
     override init() {
         super.init()
@@ -24,7 +24,7 @@ class  MovieListViewModel: ViewModelBase  {
     }
     
     
-    override func navigationToAny( model:BaseModelProtocol) -> Any {
+    override func navigationTo( model:BaseModelProtocol) -> Any {
          
             return  navigation.NavigationToAny(view: ViewEnum.MovieDetail, model: model)
     }
@@ -32,13 +32,13 @@ class  MovieListViewModel: ViewModelBase  {
     
     func fetchMovieList() {
         
-        httpHelper.Get("movie/popular", params: nil){
-            (result:Result<ResultAPI<Movie>,HttpError>) in
+        httpHelper.Get(.fetchMoviePopular()){
+            (result:Result<ResultAPI<MovieModel>,HttpError>) in
             switch result {
             
             case let.success(response):
                 DispatchQueue.main.async {
-                let movies = (response.results as [Movie])
+                let movies = (response.results as [MovieModel])
                         self.Movies = movies;
                 }
                
@@ -56,21 +56,22 @@ class  MovieListViewModel: ViewModelBase  {
     }
 
     
-    let mockMoview = Movie(id: 0,
-                          original_title: "Wonder Womand 1075  ",
-                          title: "This is ",
-                          overview: "Test desc",
+    let mockMoview = MovieModel(id : 527774,
+                          original_title: "Raya and the Last Dragon",
+                          title: "Raya and the Last Dragon",
+                          overview: "Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
                           poster_path: "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
                           backdrop_path: "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
-                          popularity: 50.5,
-                          vote_average: 8.9,
-                          vote_count: 1000,
-                          release_date: "1972-03-14",
+                          popularity : 3673.696,
+                          vote_average : 8.5,
+                          vote_count : 1310,
+                          release_date:  "2021-03-03",
                          // genres: [Genre(id: 0, name: "test")],
                           runtime: 80,
                           status: "released"  ,
                           video: false)
   
+      
 
         
 }

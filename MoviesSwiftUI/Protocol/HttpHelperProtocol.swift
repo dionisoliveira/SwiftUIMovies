@@ -9,7 +9,7 @@ import Foundation
 
 protocol HttpHelperProtocol {
     
-    func Get<T:Codable>(_ endpoint: String,
-                params: [String: String]?,
+    func Get<T:Codable>(_ endpoint: Endpoint,
+                
                 completionHandler:  @escaping (Result<T, HttpError>) -> Void) 
 }

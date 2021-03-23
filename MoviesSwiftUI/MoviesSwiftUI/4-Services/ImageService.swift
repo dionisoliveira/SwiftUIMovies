@@ -32,14 +32,10 @@ class ImageService: ImageServiceProtocol {
                         completionHandler( .success(response))
 
                    }
-                   catch{
-                     
-                       print(error.localizedDescription)
-                   }
-                   
                }
                else{
-                  
+                let response = data as! T;
+                 completionHandler( .success(response))
                }
                
                

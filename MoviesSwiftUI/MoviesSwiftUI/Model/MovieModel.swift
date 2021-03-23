@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct  Movie:BaseModelProtocol,Codable, Identifiable {
+struct  MovieModel:BaseModelProtocol,Codable, Identifiable {
    
     
     let id: Int
@@ -25,7 +25,7 @@ struct  Movie:BaseModelProtocol,Codable, Identifiable {
     
     let release_date: String?
     var releaseDate: Date? {
-        return release_date != nil ? Movie.dateFormatter.date(from: release_date!) : Date()
+        return release_date != nil ? MovieModel.dateFormatter.date(from: release_date!) : Date()
     }
     
     static let dateFormatter: DateFormatter = {
